@@ -302,8 +302,8 @@ export default {
 
 @media screen and (max-width: 850px) {
   .featuredArticles {
-    margin-top: 80px;
-    overflow: initial;
+    margin-top: 70px;
+    padding-top: 10px;
   }
 
   .featuredArticles__content {
