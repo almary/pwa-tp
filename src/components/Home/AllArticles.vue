@@ -45,10 +45,14 @@ export default {
 }
 
 @media screen and (max-width: 1350px) {
-
-.allArticles {
-  width: 1000px;
+  .allArticles {
+    width: 1000px;
+  }
 }
 
+@media screen and (max-width: 1150px) {
+  .allArticles {
+    width: 794px;
+  }
 }
 </style>

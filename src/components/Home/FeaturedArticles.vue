@@ -113,8 +113,7 @@ export default {
     };
   },
 
-  mounted() {
-  },
+  mounted() {},
 
   created() {
     window.addEventListener("resize", this.onWindowResize);
@@ -130,7 +129,6 @@ export default {
 
     next: function() {
       if (this.sliderPosition >= 4) {
-        console.log("return");
         return;
       }
       this.sliderPosition++;
@@ -141,7 +139,6 @@ export default {
       this.$refs.slider.style.transform = `translateX(${this.translateSlider -
         this.smallCardSize}px)`;
       this.translateSlider = this.translateSlider - this.smallCardSize;
-      console.log(this.translateSlider)
     },
 
     prev: function() {
@@ -278,5 +275,22 @@ export default {
   .slider--container {
     width: 1000px;
   }
+}
+
+@media screen and (max-width: 1150px) {
+  .featuredArticles__content {
+    width: 794px;
+  }
+
+  .slider--container {
+    width: 794px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+.featuredArticles {
+  margin-top: 80px;
+}
+
 }
 </style>

@@ -56,4 +56,11 @@ h4 {
     width: 315px;
   }
 }
+
+@media screen and (max-width: 1150px) {
+  img {
+    width: 244px;
+    height: 146px;
+  }
+}
 </style>

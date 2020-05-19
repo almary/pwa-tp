@@ -3,18 +3,18 @@
     <main>
       <div v-show="selectedArticle == 1" class="article">
         <div class="main__illustrations">
-            <img
-              v-show="selectedArticle == 1"
-              src="../../assets/img/image.jpg"
-              alt="illustration"
-              class="main__illustrations--large"
-            />
-            <img
-              v-show="selectedArticle == 1"
-              src="../../assets/img/image.jpg"
-              alt="poster"
-              class="main__illustrations--poster"
-            />
+          <img
+            v-show="selectedArticle == 1"
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            v-show="selectedArticle == 1"
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
         </div>
         <div class="main__content--container">
           <div class="main__content">
@@ -58,18 +58,18 @@
       </div>
       <div v-show="selectedArticle == 2" class="article">
         <div class="main__illustrations">
-            <img
-              v-show="selectedArticle == 2"
-              src="../../assets/img/image.jpg"
-              alt="illustration"
-              class="main__illustrations--large"
-            />
-            <img
-              v-show="selectedArticle == 2"
-              src="../../assets/img/image.jpg"
-              alt="poster"
-              class="main__illustrations--poster"
-            />
+          <img
+            v-show="selectedArticle == 2"
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            v-show="selectedArticle == 2"
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
         </div>
         <div class="main__content--container">
           <div class="main__content">
@@ -113,18 +113,18 @@
       </div>
       <div v-show="selectedArticle == 3" class="article">
         <div class="main__illustrations">
-            <img
-              v-show="selectedArticle == 3"
-              src="../../assets/img/image.jpg"
-              alt="illustration"
-              class="main__illustrations--large"
-            />
-            <img
-              v-show="selectedArticle == 3"
-              src="../../assets/img/image.jpg"
-              alt="poster"
-              class="main__illustrations--poster"
-            />
+          <img
+            v-show="selectedArticle == 3"
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            v-show="selectedArticle == 3"
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
         </div>
         <div class="main__content--container">
           <div class="main__content">
@@ -332,7 +332,7 @@ img {
 h1 {
   margin-bottom: 18px;
 
-  width: 555px;
+  max-width: 555px;
 
   font-family: Lora;
   font-style: normal;
@@ -372,28 +372,61 @@ h3 {
   margin-bottom: 50px;
 }
 
-/* transitions */
+@media screen and (max-width: 1180px) {
+  .main__illustrations--large {
+    width: 38vw;
+  }
 
-/* .slide-fade-enter-active {
-  transition: all 0.6s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.6s cubic-bezier(0.86,0,0.07,1);;
-}
-.slide-fade-enter, .slide-fade-leave-to
-{
-  transform: scaleX(0);
-  transform-origin: left;
+  .main__illustrations--poster {
+    width: 207px;
+    height: 282px;
+  }
 }
 
-.slide-bottom-enter-active {
-  transition: all 0.6s ease;
+@media screen and (max-width: 975px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .main__content--container {
+    width: 60vw;
+  }
 }
-.slide-bottom-leave-active {
-  transition: all 0.6s cubic-bezier(1, 0.5, 0.8, 1);
+
+@media screen and (max-width: 850px) {
+  .article {
+    flex-direction: column;
+  }
+
+  .main__illustrations--large {
+    width: 100vw;
+    height: 200px;
+  }
+
+  .main__illustrations--poster {
+    width: 147px;
+    height: 202px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .main__content--container {
+    height: auto;
+    margin-top: 20px;
+    width: 90vw;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .main__content {
+    margin: 0;
+  }
+
+  .select {
+    left: 0;
+    margin: 0;
+  }
 }
-.slide-bottom-enter, .slide-bottom-leave-to{
-  transform: scaleY(0);
-  transform-origin: bottom;
-} */
 </style>

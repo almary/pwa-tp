@@ -72,7 +72,7 @@ h4 {
 h5 {
   margin-bottom: 22px;
 
-  width: 480px;
+  max-width: 480px;
 
   font-family: Karla;
   font-style: normal;
@@ -93,8 +93,18 @@ h5 {
 }
 
 @media screen and (max-width: 1350px) {
- img {
-   width: 400px;
- }
+  img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  img {
+    width: 300px;
+  }
+
+  .bigCard__content {
+    width: 480px;
+  }
 }
 </style>
