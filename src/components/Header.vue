@@ -12,7 +12,7 @@
 
 <style scoped>
 .header {
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;

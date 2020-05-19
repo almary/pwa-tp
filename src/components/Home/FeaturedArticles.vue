@@ -135,7 +135,6 @@ export default {
       this.sliderPosition--;
       //update smallCardSize each time in case
       this.getSmallCardSize();
-      console.log(this.smallCardSize);
 
       //slide
       this.$refs.slider.style.transform = `translateX(${this.translateSlider +

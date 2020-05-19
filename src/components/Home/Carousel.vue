@@ -1,18 +1,20 @@
 <template>
   <div>
     <main>
-      <div v-if="selectedArticle == 1" class="article">
+      <div v-show="selectedArticle == 1" class="article">
         <div class="main__illustrations">
-          <img
-            src="../../assets/img/image.jpg"
-            alt="illustration"
-            class="main__illustrations--large"
-          />
-          <img
-            src="../../assets/img/image.jpg"
-            alt="poster"
-            class="main__illustrations--poster"
-          />
+            <img
+              v-show="selectedArticle == 1"
+              src="../../assets/img/image.jpg"
+              alt="illustration"
+              class="main__illustrations--large"
+            />
+            <img
+              v-show="selectedArticle == 1"
+              src="../../assets/img/image.jpg"
+              alt="poster"
+              class="main__illustrations--poster"
+            />
         </div>
         <div class="main__content--container">
           <div class="main__content">
@@ -49,23 +51,25 @@
               "
               >03</span
             >
-            <div class="timebar--fill"></div>
+            <div class="timebar--fill" ref="timebarFill"></div>
             <div class="timebar"></div>
           </div>
         </div>
       </div>
-      <div v-if="selectedArticle == 2" class="article">
+      <div v-show="selectedArticle == 2" class="article">
         <div class="main__illustrations">
-          <img
-            src="../../assets/img/image.jpg"
-            alt="illustration"
-            class="main__illustrations--large"
-          />
-          <img
-            src="../../assets/img/image.jpg"
-            alt="poster"
-            class="main__illustrations--poster"
-          />
+            <img
+              v-show="selectedArticle == 2"
+              src="../../assets/img/image.jpg"
+              alt="illustration"
+              class="main__illustrations--large"
+            />
+            <img
+              v-show="selectedArticle == 2"
+              src="../../assets/img/image.jpg"
+              alt="poster"
+              class="main__illustrations--poster"
+            />
         </div>
         <div class="main__content--container">
           <div class="main__content">
@@ -102,23 +106,25 @@
               "
               >03</span
             >
-            <div class="timebar--fill"></div>
+            <div class="timebar--fill" ref="timebarFill"></div>
             <div class="timebar"></div>
           </div>
         </div>
       </div>
-      <div v-if="selectedArticle == 3" class="article">
+      <div v-show="selectedArticle == 3" class="article">
         <div class="main__illustrations">
-          <img
-            src="../../assets/img/image.jpg"
-            alt="illustration"
-            class="main__illustrations--large"
-          />
-          <img
-            src="../../assets/img/image.jpg"
-            alt="poster"
-            class="main__illustrations--poster"
-          />
+            <img
+              v-show="selectedArticle == 3"
+              src="../../assets/img/image.jpg"
+              alt="illustration"
+              class="main__illustrations--large"
+            />
+            <img
+              v-show="selectedArticle == 3"
+              src="../../assets/img/image.jpg"
+              alt="poster"
+              class="main__illustrations--poster"
+            />
         </div>
         <div class="main__content--container">
           <div class="main__content">
@@ -155,7 +161,7 @@
               "
               >03</span
             >
-            <div class="timebar--fill"></div>
+            <div class="timebar--fill" ref="timebarFill"></div>
             <div class="timebar"></div>
           </div>
         </div>
@@ -190,7 +196,6 @@ export default {
   methods: {
     setupTimerInterval: function() {
       this.myTimer = setInterval(() => {
-
         if (this.selectedArticle == this.totalNumberOfArticles) {
           this.selectedArticle = 1;
           return;
@@ -286,10 +291,7 @@ export default {
   bottom: 0;
   transform-origin: left;
 
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-name: timebarFilled;
+  animation: timebarFilled 5s linear infinite;
 }
 
 @keyframes timebarFilled {
@@ -369,4 +371,29 @@ h3 {
 .button {
   margin-bottom: 50px;
 }
+
+/* transitions */
+
+/* .slide-fade-enter-active {
+  transition: all 0.6s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.6s cubic-bezier(0.86,0,0.07,1);;
+}
+.slide-fade-enter, .slide-fade-leave-to
+{
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.slide-bottom-enter-active {
+  transition: all 0.6s ease;
+}
+.slide-bottom-leave-active {
+  transition: all 0.6s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-bottom-enter, .slide-bottom-leave-to{
+  transform: scaleY(0);
+  transform-origin: bottom;
+} */
 </style>
