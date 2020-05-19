@@ -32,7 +32,7 @@ button {
   letter-spacing: -0.03em;
 
   color: #f5f5f0;
-  
+
   cursor: pointer;
 }
 
@@ -42,5 +42,12 @@ button:focus {
 
 .link {
   text-decoration: none;
+}
+
+@media screen and (max-width: 850px) {
+  button {
+    width: 90vw;
+    align-items: center;
+  }
 }
 </style>

@@ -21,7 +21,7 @@ button {
 
   /* Primary/Base */
 
-  outline: #f66362 2px solid;
+  outline: #f66362 1px solid;
   background: none;
 
   font-style: normal;
@@ -39,13 +39,17 @@ button {
 }
 
 button:focus {
-  outline: none;
+  outline: #f66362 1px solid;
 }
 
 @media screen and (max-width: 850px) {
-.button {
-  margin-top: 0;
-}
+  .button {
+    margin-top: 0;
+  }
 
+  button {
+    width: 90vw;
+    align-items: center;
+  }
 }
 </style>
