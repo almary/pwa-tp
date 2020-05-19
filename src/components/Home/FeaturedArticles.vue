@@ -4,6 +4,7 @@
       <h2>Featured Articles</h2>
       <div class="featuredArticles__arrow">
         <svg
+          v-on:click="prev"
           class="featuredArticles__arrow--left"
           width="44"
           height="44"
@@ -41,6 +42,7 @@
           </defs>
         </svg>
         <svg
+          v-on:click="next"
           class="featuredArticles__arrow--right"
           width="44"
           height="44"
@@ -80,12 +82,14 @@
       </div>
     </div>
     <div class="slider--container">
-      <div class="slider">
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
+      <div class="slider" ref="slider">
+        <SmallCard msg="The Meaning of Studio Ghibli's 'Spirited Away'" ref="smallCard" />
+        <SmallCard msg="yo"/>
+        <SmallCard msg="ok"/>
+        <SmallCard msg="blabla"/>
+        <SmallCard msg="2 lignes"/>
+        <SmallCard msg="blabalbalb"/>
+        <SmallCard msg="yo"/>
       </div>
     </div>
   </div>
@@ -98,6 +102,52 @@ export default {
   name: "FeaturedArticles",
   components: {
     SmallCard,
+  },
+
+  data() {
+    return {
+      smallCardSize: 0,
+      translateSlider: -484,
+    };
+  },
+
+  methods: {
+    next: function() {
+      console.log("next");
+      //update smallCardSize each time in case
+      this.getSmallCardSize();
+      console.log(this.smallCardSize)
+
+      //clone the first element to the end
+      let firstElement = this.$refs.slider.firstElementChild;
+      let clone = firstElement.cloneNode(true);
+      this.$refs.slider.appendChild(clone);
+      //delete first element
+      this.$refs.slider.firstElementChild.remove();
+
+      //slide
+      // this.$refs.slider.style.transform = `translateX(${this.translateSlider - this.smallCardSize}px)`
+      // this.translateSlider = this.translateSlider - this.smallCardSize;
+    },
+
+    prev: function() {
+      console.log("prev");
+
+      //update smallCardSize each time in case
+      this.getSmallCardSize();
+      //slide
+      this.$refs.slider.style.transform = `translateX(${this.translateSlider + this.smallCardSize}px)`
+      this.translateSlider = this.translateSlider + this.smallCardSize;
+    },
+
+    getSmallCardSize() {
+      let element = this.$refs.slider.lastElementChild;
+      var style = element.currentStyle || window.getComputedStyle(element);
+      var width = element.offsetWidth;
+      var margin = parseFloat(style.marginRight);
+
+      this.smallCardSize = width + margin;
+    },
   },
 };
 </script>
@@ -139,7 +189,7 @@ export default {
 
 .slider--container {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slider--container::before {
@@ -173,7 +223,8 @@ export default {
   display: flex;
   flex-direction: row;
 
-  transform: translateX(-68px);
+  transform: translateX(-484px);
+  transition: transform 0.3s ease-in-out;
 
   width: 1920px;
 }

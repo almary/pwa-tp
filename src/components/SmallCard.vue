@@ -2,7 +2,7 @@
   <div class="smallCard">
     <router-link class="link" to="/">
       <img src="../assets/img/image.jpg" alt="image" />
-      <h4>The Meaning of Studio Ghibli's 'Spirited Away'</h4>
+      <h4>{{ msg }}</h4>
       <Author />
     </router-link>
   </div>
@@ -12,6 +12,7 @@
 import Author from "../components/Author.vue";
 
 export default {
+  props: ["msg"],
   name: "SmallCard",
   components: {
     Author,
