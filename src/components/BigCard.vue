@@ -1,8 +1,8 @@
 <template>
   <div class="bigCard">
-    <img src="../assets/img/image.jpg" alt="image" />
+    <img :src="image" alt="image" />
     <div class="bigCard__content">
-      <h4>The Meaning of Studio Ghibli's 'Spirited Away'</h4>
+      <h4>{{ title }}</h4>
       <h5>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
         tincidunt odio platea dolor sed sagittis vitae libero, elit. Mollis nibh
@@ -11,7 +11,9 @@
         imperdiet quam id mi.
       </h5>
       <Author class="author" />
-      <MainButton />
+      <MainButton 
+        :id="id"
+      />
     </div>
   </div>
 </template>
@@ -26,6 +28,7 @@ export default {
     Author,
     MainButton,
   },
+  props: ["title", "image", "id"],
 };
 </script>
 

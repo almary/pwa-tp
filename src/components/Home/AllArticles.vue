@@ -6,9 +6,13 @@
           <h2>All Articles</h2>
         </div>
         <div class="allArticlesList">
-          <BigCard />
-          <BigCard />
-          <BigCard />
+          <BigCard 
+            v-for="article in articles" 
+            :key="article.id"
+            :title="article.title"
+            :image="article.imageBackground"
+            :id="article.id"
+          />
         </div>
       </div>
       <SecondaryButton />
@@ -26,6 +30,7 @@ export default {
     BigCard,
     SecondaryButton,
   },
+  props: ["articles"],
 };
 </script>
 
