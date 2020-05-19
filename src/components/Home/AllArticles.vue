@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style scoped>
+.allArticles {
+  width: 1222px;
+}
+
 .allArticles__container {
   margin-top: 120px;
 

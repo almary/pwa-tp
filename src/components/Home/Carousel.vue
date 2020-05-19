@@ -1,29 +1,164 @@
 <template>
   <div>
     <main>
-      <div class="main__illustrations">
-        <img
-          src="../../assets/img/image.jpg"
-          alt="illustration"
-          class="main__illustrations--large"
-        />
-        <img
-          src="../../assets/img/image.jpg"
-          alt="poster"
-          class="main__illustrations--poster"
-        />
+      <div v-if="selectedArticle == 1" class="article">
+        <div class="main__illustrations">
+          <img
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
+        </div>
+        <div class="main__content--container">
+          <div class="main__content">
+            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae libero, elit.
+              Mollis nibh felis facilisis imperdiet quam id mi. Sem Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae liber...
+            </h3>
+            <Author class="author" />
+            <MainButton class="button" />
+          </div>
+          <div class="select select--one">
+            <span
+              class="select--selected"
+              v-on:click="
+                selectedArticle = 1;
+                clearTimerInterval();
+              "
+              >01</span
+            >
+            <span
+              v-on:click="
+                selectedArticle = 2;
+                clearTimerInterval();
+              "
+              >02</span
+            >
+            <span
+              v-on:click="
+                selectedArticle = 3;
+                clearTimerInterval();
+              "
+              >03</span
+            >
+            <div class="timebar--fill"></div>
+            <div class="timebar"></div>
+          </div>
+        </div>
       </div>
-      <div class="main__content">
-        <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
-        <h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
-          tincidunt odio platea dolor sed sagittis vitae libero, elit. Mollis
-          nibh felis facilisis imperdiet quam id mi. Sem Pharetra, tincidunt
-          odio platea dolor sed sagittis vitae liber...
-        </h3>
-        <Author class="author" />
-        <MainButton class="button"/>
-        <div>sélecteur</div>
+      <div v-if="selectedArticle == 2" class="article">
+        <div class="main__illustrations">
+          <img
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
+        </div>
+        <div class="main__content--container">
+          <div class="main__content">
+            <h1>Yo</h1>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae libero, elit.
+              Mollis nibh felis facilisis imperdiet quam id mi. Sem Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae liber...
+            </h3>
+            <Author class="author" />
+            <MainButton class="button" />
+          </div>
+          <div class="select select--one">
+            <span
+              v-on:click="
+                selectedArticle = 1;
+                clearTimerInterval();
+              "
+              >01</span
+            >
+            <span
+              class="select--selected"
+              v-on:click="
+                selectedArticle = 2;
+                clearTimerInterval();
+              "
+              >02</span
+            >
+            <span
+              v-on:click="
+                selectedArticle = 3;
+                clearTimerInterval();
+              "
+              >03</span
+            >
+            <div class="timebar--fill"></div>
+            <div class="timebar"></div>
+          </div>
+        </div>
+      </div>
+      <div v-if="selectedArticle == 3" class="article">
+        <div class="main__illustrations">
+          <img
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
+        </div>
+        <div class="main__content--container">
+          <div class="main__content">
+            <h1>Hey</h1>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae libero, elit.
+              Mollis nibh felis facilisis imperdiet quam id mi. Sem Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae liber...
+            </h3>
+            <Author class="author" />
+            <MainButton class="button" />
+          </div>
+          <div class="select select--one">
+            <span
+              v-on:click="
+                selectedArticle = 1;
+                clearTimerInterval();
+              "
+              >01</span
+            >
+            <span
+              v-on:click="
+                selectedArticle = 2;
+                clearTimerInterval();
+              "
+              >02</span
+            >
+            <span
+              class="select--selected"
+              v-on:click="
+                selectedArticle = 3;
+                clearTimerInterval();
+              "
+              >03</span
+            >
+            <div class="timebar--fill"></div>
+            <div class="timebar"></div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
@@ -39,14 +174,132 @@ export default {
     Author,
     MainButton,
   },
+
+  data() {
+    return {
+      selectedArticle: 1,
+      totalNumberOfArticles: 3,
+      myTimer: null,
+    };
+  },
+
+  mounted() {
+    this.setupTimerInterval();
+  },
+
+  methods: {
+    setupTimerInterval: function() {
+      this.myTimer = setInterval(() => {
+
+        if (this.selectedArticle == this.totalNumberOfArticles) {
+          this.selectedArticle = 1;
+          return;
+        } else {
+          this.selectedArticle++;
+        }
+      }, 5000);
+    },
+
+    clearTimerInterval: function() {
+      clearInterval(this.myTimer);
+      this.setupTimerInterval();
+    },
+  },
 };
 </script>
 
 <style scoped>
-main {
+/* main {
+  display: flex;
+  justify-content: center;
+} */
+
+.article {
   display: flex;
   margin-top: 24px;
   align-items: center;
+  /* max-width: 1300px; */
+}
+
+.main__content--container {
+  position: relative;
+  height: 466px;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  margin-left: 32px;
+  position: absolute;
+  bottom: 0;
+}
+
+.select span {
+  cursor: pointer;
+
+  padding: 10px;
+
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 117.7%;
+  /* or 16px */
+
+  letter-spacing: -0.03em;
+
+  color: #000000;
+
+  opacity: 0.2;
+}
+
+.select .select--selected {
+  font-size: 16px;
+  line-height: 117.7%;
+  /* identical to box height, or 19px */
+
+  letter-spacing: -0.03em;
+
+  /* Primary/Base */
+
+  color: #f66362;
+  opacity: 0.8;
+}
+
+.timebar {
+  width: 108px;
+  height: 2px;
+
+  margin-top: 8px;
+
+  /* Neutrals/Black */
+
+  background: #161616;
+  opacity: 0.2;
+}
+
+.timebar--fill {
+  width: 108px;
+  height: 2px;
+  position: absolute;
+  background: #f66362;
+  bottom: 0;
+  transform-origin: left;
+
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: timebarFilled;
+}
+
+@keyframes timebarFilled {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 img {
@@ -63,7 +316,7 @@ img {
 
 .main__illustrations--large {
   height: 466px;
-  width: 48vw;
+  width: 49vw;
 }
 
 .main__illustrations--poster {
