@@ -78,6 +78,8 @@ export default {
 
 <style scoped>
 .chat {
+  z-index: 5;
+  
   position: fixed;
   bottom: 0;
   right: 32px;
