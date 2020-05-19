@@ -1,29 +1,104 @@
 <template>
   <div>
     <main>
-      <div class="main__illustrations">
-        <img
-          src="../../assets/img/image.jpg"
-          alt="illustration"
-          class="main__illustrations--large"
-        />
-        <img
-          src="../../assets/img/image.jpg"
-          alt="poster"
-          class="main__illustrations--poster"
-        />
+      <div v-if="selectedArticle == 1" class="article">
+        <div class="main__illustrations">
+          <img
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
+        </div>
+        <div class="main__content--container">
+          <div class="main__content">
+            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae libero, elit.
+              Mollis nibh felis facilisis imperdiet quam id mi. Sem Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae liber...
+            </h3>
+            <Author class="author" />
+            <MainButton class="button" />
+          </div>
+          <div class="select select--one">
+            <span v-on:click="selectedArticle = 1">01</span>
+            <span v-on:click="selectedArticle = 2">02</span>
+            <span v-on:click="selectedArticle = 3">03</span>
+            <div class="timebar"></div>
+          </div>
+        </div>
       </div>
-      <div class="main__content">
-        <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
-        <h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
-          tincidunt odio platea dolor sed sagittis vitae libero, elit. Mollis
-          nibh felis facilisis imperdiet quam id mi. Sem Pharetra, tincidunt
-          odio platea dolor sed sagittis vitae liber...
-        </h3>
-        <Author class="author" />
-        <MainButton class="button"/>
-        <div>sélecteur</div>
+      <div v-if="selectedArticle == 2" class="article">
+        <div class="main__illustrations">
+          <img
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
+        </div>
+        <div class="main__content--container">
+          <div class="main__content">
+            <h1>Yo</h1>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae libero, elit.
+              Mollis nibh felis facilisis imperdiet quam id mi. Sem Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae liber...
+            </h3>
+            <Author class="author" />
+            <MainButton class="button" />
+          </div>
+          <div class="select select--one">
+            <span v-on:click="selectedArticle = 1">01</span>
+            <span v-on:click="selectedArticle = 2">02</span>
+            <span v-on:click="selectedArticle = 3">03</span>
+            <div class="timebar"></div>
+          </div>
+        </div>
+      </div>
+      <div v-if="selectedArticle == 3" class="article">
+        <div class="main__illustrations">
+          <img
+            src="../../assets/img/image.jpg"
+            alt="illustration"
+            class="main__illustrations--large"
+          />
+          <img
+            src="../../assets/img/image.jpg"
+            alt="poster"
+            class="main__illustrations--poster"
+          />
+        </div>
+        <div class="main__content--container">
+          <div class="main__content">
+            <h1>Hey</h1>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae libero, elit.
+              Mollis nibh felis facilisis imperdiet quam id mi. Sem Pharetra,
+              tincidunt odio platea dolor sed sagittis vitae liber...
+            </h3>
+            <Author class="author" />
+            <MainButton class="button" />
+          </div>
+          <div class="select select--one">
+            <span v-on:click="selectedArticle = 1">01</span>
+            <span v-on:click="selectedArticle = 2">02</span>
+            <span v-on:click="selectedArticle = 3">03</span>
+            <div class="timebar"></div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
@@ -39,14 +114,65 @@ export default {
     Author,
     MainButton,
   },
+
+  data() {
+    return {
+      selectedArticle: 1,
+    };
+  },
 };
 </script>
 
 <style scoped>
-main {
+.article {
   display: flex;
   margin-top: 24px;
   align-items: center;
+}
+
+.main__content--container {
+  border: red 2px solid;
+  position: relative;
+  height: 466px;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  margin-left: 32px;
+  position: absolute;
+  bottom: 0;
+}
+
+.select span {
+  cursor: pointer;
+
+  margin-right: 20px;
+
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 117.7%;
+  /* or 16px */
+
+  letter-spacing: -0.03em;
+
+  color: #000000;
+
+  opacity: 0.2;
+}
+
+.timebar {
+  width: 86px;
+  height: 2px;
+
+  margin-top: 4px;
+
+  /* Neutrals/Black */
+
+  background: #161616;
+  opacity: 0.2;
 }
 
 img {
