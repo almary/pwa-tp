@@ -43,6 +43,7 @@ export default {
 img {
   width: 593px;
   height: 334px;
+  object-fit: cover;
 }
 
 .bigCard__content {
@@ -89,5 +90,11 @@ h5 {
 
 .author {
   margin-bottom: 27px;
+}
+
+@media screen and (max-width: 1350px) {
+ img {
+   width: 400px;
+ }
 }
 </style>

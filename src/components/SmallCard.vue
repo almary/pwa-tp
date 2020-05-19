@@ -50,4 +50,10 @@ h4 {
 
   color: #161616;
 }
+
+@media screen and (max-width: 1350px) {
+  img {
+    width: 315px;
+  }
+}
 </style>

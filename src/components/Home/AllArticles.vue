@@ -43,4 +43,12 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 1350px) {
+
+.allArticles {
+  width: 1000px;
+}
+
+}
 </style>
