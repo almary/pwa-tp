@@ -20,7 +20,8 @@
     text-align: center;
   }
   li {
-    margin:0 5vw 0 0;
+    margin:0 4vw 0 4vw;
+
     top: 50%;
     position: relative;
     list-style: none;
