@@ -1,5 +1,5 @@
 <template>
-  <div v-if="post">
+  <div class="article" v-if="post">
     <Header />
     <div class="hero">
       <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
@@ -99,6 +99,11 @@ export default {
 </script>
 
 <style scoped>
+.article {
+  background: #f5f5f0;
+  min-height: 100vh;
+}
+
 .hero {
   width: 100vw;
   height: 320px;
