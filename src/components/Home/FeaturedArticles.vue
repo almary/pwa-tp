@@ -83,13 +83,13 @@
     </div>
     <div class="slider--container">
       <div class="slider" ref="slider">
-        <SmallCard msg="The Meaning of Studio Ghibli's 'Spirited Away'" ref="smallCard" />
-        <SmallCard msg="yo"/>
-        <SmallCard msg="ok"/>
-        <SmallCard msg="blabla"/>
-        <SmallCard msg="2 lignes"/>
-        <SmallCard msg="blabalbalb"/>
-        <SmallCard msg="yo"/>
+        <SmallCard msg="The Meaning of Studio Ghibli's 'Spirited Away'" />
+        <SmallCard msg="yo" />
+        <SmallCard msg="ok" />
+        <SmallCard msg="blabla" />
+        <SmallCard msg="2 lignes" />
+        <SmallCard msg="blabalbalb" />
+        <SmallCard msg="yo" />
       </div>
     </div>
   </div>
@@ -107,36 +107,49 @@ export default {
   data() {
     return {
       smallCardSize: 0,
-      translateSlider: -484,
+      translateSlider: 348,
+      numberOfFeaturedArticles: 5,
+      sliderPosition: 0,
     };
   },
 
   methods: {
     next: function() {
       console.log("next");
+      if (this.sliderPosition >= 4) {
+        return;
+      }
+      this.sliderPosition++;
       //update smallCardSize each time in case
       this.getSmallCardSize();
-      console.log(this.smallCardSize)
+      console.log(this.smallCardSize);
 
       //clone the first element to the end
-      let firstElement = this.$refs.slider.firstElementChild;
-      let clone = firstElement.cloneNode(true);
-      this.$refs.slider.appendChild(clone);
-      //delete first element
-      this.$refs.slider.firstElementChild.remove();
+      // let firstElement = this.$refs.slider.firstElementChild;
+      // let clone = firstElement.cloneNode(true);
+      // this.$refs.slider.appendChild(clone);
+      // //delete first element
+      // this.$refs.slider.firstElementChild.remove();
 
       //slide
-      // this.$refs.slider.style.transform = `translateX(${this.translateSlider - this.smallCardSize}px)`
-      // this.translateSlider = this.translateSlider - this.smallCardSize;
+      this.$refs.slider.style.transform = `translateX(${this.translateSlider -
+        this.smallCardSize}px)`;
+      this.translateSlider = this.translateSlider - this.smallCardSize;
     },
 
     prev: function() {
       console.log("prev");
-
+      if (this.sliderPosition <= 0) {
+        return;
+      }
+      this.sliderPosition--;
       //update smallCardSize each time in case
       this.getSmallCardSize();
+      console.log(this.smallCardSize);
+
       //slide
-      this.$refs.slider.style.transform = `translateX(${this.translateSlider + this.smallCardSize}px)`
+      this.$refs.slider.style.transform = `translateX(${this.translateSlider +
+        this.smallCardSize}px)`;
       this.translateSlider = this.translateSlider + this.smallCardSize;
     },
 
@@ -189,7 +202,7 @@ export default {
 
 .slider--container {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .slider--container::before {
@@ -223,7 +236,7 @@ export default {
   display: flex;
   flex-direction: row;
 
-  transform: translateX(-484px);
+  transform: translateX(348px);
   transition: transform 0.3s ease-in-out;
 
   width: 1920px;
