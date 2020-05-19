@@ -2,14 +2,14 @@
   <div class="listing">
     <Header />
     <div class="content">
-    <h1>All Articles</h1>
+      <h1>All Articles</h1>
       <div class="card" v-for="post in posts" :key="post.id">
         <router-link class="link" :to="`/article/${post.id}`">
           <BigCard />
         </router-link>
       </div>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .listing {
-  background: #F5F5F0;
+  background: #f5f5f0;
   min-height: 100vh;
 }
 
@@ -69,5 +69,6 @@ h1 {
 
   color: #161616;
 }
+
 
 </style>

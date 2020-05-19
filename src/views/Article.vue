@@ -53,9 +53,9 @@
         <div class="article__bottom">
           <Author />
           <div class="article__bottom--share">
-            <img src="../assets/svg/twitter.svg" alt="twitter">
-            <img src="../assets/svg/facebook.svg" alt="facebook">
-            <img src="../assets/svg/linkedin.svg" alt="linkedin">
+            <img src="../assets/svg/twitter.svg" alt="twitter" />
+            <img src="../assets/svg/facebook.svg" alt="facebook" />
+            <img src="../assets/svg/linkedin.svg" alt="linkedin" />
           </div>
         </div>
       </div>
@@ -172,4 +172,24 @@ article {
   cursor: pointer;
 }
 
+@media screen and (max-width: 850px) {
+  .hero {
+    height: 200px;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 32px;
+    width: 90vw;
+    margin-bottom: 0;
+  }
+
+  article {
+    margin-top: 20px;
+  }
+
+  .article__container {
+    width: 90vw;
+  }
+}
 </style>

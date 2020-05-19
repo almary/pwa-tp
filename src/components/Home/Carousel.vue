@@ -73,7 +73,7 @@
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
+            <h1>The Meaning of Studio Ghibli's 'Mononoke Hime'</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.
@@ -128,7 +128,7 @@
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
+            <h1>The Meaning of Studio Ghibli's 'Howl's Moving Castle'</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.

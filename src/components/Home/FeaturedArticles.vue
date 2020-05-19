@@ -113,7 +113,9 @@ export default {
     };
   },
 
-  mounted() {},
+  mounted() {
+    this.updateScreenSize();
+  },
 
   created() {
     window.addEventListener("resize", this.onWindowResize);
@@ -125,11 +127,14 @@ export default {
   methods: {
     onWindowResize: function() {
       this.updateTranslateValue();
+      this.updateScreenSize();
     },
 
     next: function() {
-      if (this.sliderPosition >= 4) {
+      if (this.sliderPosition >= 4 && this.screenSize == 'large') {
         return;
+      } else if (this.sliderPosition >= 6 && this.screenSize == 'mobile') {
+        return
       }
       this.sliderPosition++;
       //update smallCardSize each time in case
@@ -169,6 +174,14 @@ export default {
       this.sliderPosition = 0;
       this.translateSlider = 0;
     },
+
+    updateScreenSize() {
+      if (window.innerWidth >= 850) {
+        this.screenSize = "large";
+      } else {
+        this.screenSize = "mobile";
+      }
+    }
   },
 };
 </script>
@@ -176,7 +189,7 @@ export default {
 <style scoped>
 .featuredArticles {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 
   margin-top: calc(120px + 32px);
 

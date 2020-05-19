@@ -117,6 +117,7 @@ h5 {
   .bigCard {
     flex-direction: column;
     align-items: flex-start;
+    width: 90vw;
   }
 
   .bigCard__content {
