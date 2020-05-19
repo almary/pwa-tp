@@ -27,7 +27,9 @@
             <MainButton class="button" />
           </div>
           <div class="select select--one">
-            <span v-on:click="selectedArticle = 1">01</span>
+            <span class="select--selected" v-on:click="selectedArticle = 1"
+              >01</span
+            >
             <span v-on:click="selectedArticle = 2">02</span>
             <span v-on:click="selectedArticle = 3">03</span>
             <div class="timebar"></div>
@@ -61,7 +63,9 @@
           </div>
           <div class="select select--one">
             <span v-on:click="selectedArticle = 1">01</span>
-            <span v-on:click="selectedArticle = 2">02</span>
+            <span class="select--selected" v-on:click="selectedArticle = 2"
+              >02</span
+            >
             <span v-on:click="selectedArticle = 3">03</span>
             <div class="timebar"></div>
           </div>
@@ -95,7 +99,9 @@
           <div class="select select--one">
             <span v-on:click="selectedArticle = 1">01</span>
             <span v-on:click="selectedArticle = 2">02</span>
-            <span v-on:click="selectedArticle = 3">03</span>
+            <span class="select--selected" v-on:click="selectedArticle = 3"
+              >03</span
+            >
             <div class="timebar"></div>
           </div>
         </div>
@@ -131,7 +137,6 @@ export default {
 }
 
 .main__content--container {
-  border: red 2px solid;
   position: relative;
   height: 466px;
   display: flex;
@@ -147,7 +152,7 @@ export default {
 .select span {
   cursor: pointer;
 
-  margin-right: 20px;
+  padding: 10px;
 
   font-family: Karla;
   font-style: normal;
@@ -163,11 +168,24 @@ export default {
   opacity: 0.2;
 }
 
+.select .select--selected {
+  font-size: 16px;
+  line-height: 117.7%;
+  /* identical to box height, or 19px */
+
+  letter-spacing: -0.03em;
+
+  /* Primary/Base */
+
+  color: #f66362;
+  opacity: 0.8;
+}
+
 .timebar {
-  width: 86px;
+  width: 108px;
   height: 2px;
 
-  margin-top: 4px;
+  margin-top: 8px;
 
   /* Neutrals/Black */
 
