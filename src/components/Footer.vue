@@ -9,24 +9,25 @@
 </template>
 
 <style scoped>
-  .footer {
-    margin-top: 80px;
+.footer {
+  margin-top: 80px;
 
-    width: 100vw;
-    height: 140px;
-    background: #EBEBE6;
+  width: 100vw;
+  height: 140px;
+  background: #ebebe6;
+  text-align: center;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    text-align: center;
-  }
-  li {
-    margin:0 4vw 0 4vw;
-
-    top: 50%;
-    position: relative;
-    list-style: none;
-    display: inline;
-    text-align: center;
-    cursor: pointer;
-  }
+li {
+  margin: 0 4vw 0 4vw;
+  position: relative;
+  list-style: none;
+  display: inline;
+  text-align: center;
+  cursor: pointer;
+}
 </style>

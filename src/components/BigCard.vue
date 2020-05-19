@@ -37,7 +37,7 @@ export default {
   flex-direction: row;
   align-items: center;
 
-  margin-bottom: 48px;
+  margin-bottom: 58px;
 }
 
 img {

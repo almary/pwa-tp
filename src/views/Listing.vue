@@ -9,18 +9,21 @@
         </router-link>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
 import BigCard from "@/components/BigCard.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Listing",
   components: {
     Header,
     BigCard,
+    Footer,
   },
 
   data() {
