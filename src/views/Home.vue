@@ -1,17 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <Carousel/>
+    <FeaturedArticles/>
+    <AllArticles/>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import Header from '@/components/Header.vue'
+import Carousel from '@/components/Home/Carousel.vue'
+import FeaturedArticles from '@/components/Home/FeaturedArticles.vue'
+import AllArticles from '@/components/Home/AllArticles.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Header,
+    Carousel,
+    FeaturedArticles,
+    AllArticles,
   }
 }
 </script>
+
+<style scoped>
+  .home {
+    background: #F5F5F0;
+  }
+</style>
