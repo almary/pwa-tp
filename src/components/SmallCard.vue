@@ -63,4 +63,16 @@ h4 {
     height: 146px;
   }
 }
+
+@media screen and (max-width: 850px) {
+  .smallCard {
+    width: 90vw;
+    margin-right: 12px;
+  }
+
+  img {
+    width: 90vw;
+    height: 200px;
+  }
+}
 </style>

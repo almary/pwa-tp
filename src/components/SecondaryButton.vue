@@ -16,7 +16,7 @@ button {
   display: flex;
   flex-direction: column;
   padding: 14px 44px;
-  height: 46px;
+  /* height: 46px; */
   border: none;
 
   /* Primary/Base */
@@ -40,5 +40,12 @@ button {
 
 button:focus {
   outline: none;
+}
+
+@media screen and (max-width: 850px) {
+.button {
+  margin-top: 0;
+}
+
 }
 </style>

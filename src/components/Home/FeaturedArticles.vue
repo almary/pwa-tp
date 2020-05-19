@@ -288,9 +288,21 @@ export default {
 }
 
 @media screen and (max-width: 850px) {
-.featuredArticles {
-  margin-top: 80px;
-}
+  .featuredArticles {
+    margin-top: 80px;
+    overflow: initial;
+  }
 
+  .featuredArticles__content {
+    width: 90vw;
+  }
+
+  .slider--container {
+    width: 90vw;
+  }
+
+  .featuredArticles__arrow {
+    top: -9px;
+  }
 }
 </style>

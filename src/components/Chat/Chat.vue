@@ -224,4 +224,10 @@ button {
 button:focus {
   outline: none;
 }
+
+@media screen and (max-width: 850px) {
+  .chat {
+    display: none;
+  }
+}
 </style>

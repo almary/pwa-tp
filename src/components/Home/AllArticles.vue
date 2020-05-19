@@ -55,4 +55,14 @@ export default {
     width: 794px;
   }
 }
+
+@media screen and (max-width: 850px) {
+  .allArticles {
+    width: 90vw;
+  }
+
+  .allArticles__container {
+    margin-top: 80px;
+  }
+}
 </style>

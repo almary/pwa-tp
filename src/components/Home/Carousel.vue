@@ -73,7 +73,7 @@
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>Yo</h1>
+            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.
@@ -128,7 +128,7 @@
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>Hey</h1>
+            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.
@@ -221,7 +221,6 @@ export default {
 
 .article {
   display: flex;
-  margin-top: 24px;
   align-items: center;
   /* max-width: 1300px; */
 }
@@ -404,12 +403,18 @@ h3 {
   }
 
   .main__illustrations--poster {
-    width: 147px;
-    height: 202px;
+    width: 113px;
+    height: 155px;
+    right: 24px;
+    bottom: -12px;
   }
 
   h1 {
     font-size: 32px;
+  }
+
+  h3 {
+    width: auto;
   }
 
   .main__content--container {
@@ -427,6 +432,10 @@ h3 {
   .select {
     left: 0;
     margin: 0;
+  }
+
+  .author {
+    margin-bottom: 20px;
   }
 }
 </style>

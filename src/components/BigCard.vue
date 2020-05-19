@@ -107,4 +107,27 @@ h5 {
     width: 480px;
   }
 }
+
+@media screen and (max-width: 850px) {
+  img {
+    width: 90vw;
+    height: 200px;
+  }
+
+  .bigCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bigCard__content {
+    width: auto;
+    max-width: 480px;
+    margin-left: 0;
+  }
+
+  h4 {
+    font-size: 24px;
+    margin-top: 12px;
+  }
+}
 </style>

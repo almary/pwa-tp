@@ -30,3 +30,11 @@ h2 {
 .link {
   text-decoration: none;
 }
+
+@media screen and (max-width: 850px) {
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+}
