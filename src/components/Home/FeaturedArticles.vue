@@ -115,21 +115,12 @@ export default {
 
   methods: {
     next: function() {
-      console.log("next");
       if (this.sliderPosition >= 4) {
         return;
       }
       this.sliderPosition++;
       //update smallCardSize each time in case
       this.getSmallCardSize();
-      console.log(this.smallCardSize);
-
-      //clone the first element to the end
-      // let firstElement = this.$refs.slider.firstElementChild;
-      // let clone = firstElement.cloneNode(true);
-      // this.$refs.slider.appendChild(clone);
-      // //delete first element
-      // this.$refs.slider.firstElementChild.remove();
 
       //slide
       this.$refs.slider.style.transform = `translateX(${this.translateSlider -
@@ -138,7 +129,6 @@ export default {
     },
 
     prev: function() {
-      console.log("prev");
       if (this.sliderPosition <= 0) {
         return;
       }
