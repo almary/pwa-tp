@@ -85,13 +85,14 @@
     </div>
     <div class="slider--container">
       <div class="slider" ref="slider">
-        <SmallCard msg="The Meaning of Studio Ghibli's 'Spirited Away'" />
-        <SmallCard msg="yo" />
-        <SmallCard msg="ok" />
-        <SmallCard msg="blabla" />
-        <SmallCard msg="2 lignes" />
-        <SmallCard msg="blabalbalb" />
-        <SmallCard msg="yo" />
+        <SmallCard 
+          v-for="article in articles"
+          :key="article.id"
+          :title="article.title"
+          :image="article.imageBackground"
+          :id="article.id"
+        />
+        
       </div>
     </div>
   </div>
@@ -105,7 +106,7 @@ export default {
   components: {
     SmallCard,
   },
-
+  props: ["articles"],
   data() {
     return {
       smallCardSize: 0,

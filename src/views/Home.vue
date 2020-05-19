@@ -1,9 +1,15 @@
 <template>
   <div class="home">
     <Header/>
-    <Carousel/>
-    <FeaturedArticles/>
-    <AllArticles/>
+    <Carousel
+      :articles="articles"
+    />
+    <FeaturedArticles
+      :articles="articles"
+    />
+    <AllArticles
+      :articles="articles"
+    />
     <Chat/>
     <Footer/>
   </div>
@@ -16,6 +22,7 @@ import FeaturedArticles from '@/components/Home/FeaturedArticles.vue'
 import AllArticles from '@/components/Home/AllArticles.vue'
 import Footer from '@/components/Footer.vue'
 import Chat from '@/components/Chat/Chat.vue'
+import axios from 'axios';
 
 export default {
   name: 'Home',
@@ -26,6 +33,20 @@ export default {
     AllArticles,
     Footer,
     Chat,
+  },
+  data() {
+    return {
+      articles: []
+    }
+  },
+  created: async function() {
+    this.articles = await this.getArticles();
+  },
+  methods: {
+    async getArticles() {
+      const result = await axios.get('https://my-json-server.typicode.com/louis-genestier/typicode2/articles');
+      return result.data;
+    }
   }
 }
 </script>

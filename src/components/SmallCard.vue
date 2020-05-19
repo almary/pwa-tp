@@ -1,8 +1,8 @@
 <template>
   <div class="smallCard">
     <router-link class="link" to="/">
-      <img src="../assets/img/image.jpg" alt="image" />
-      <h4>{{ msg }}</h4>
+      <img :src="image" alt="image" />
+      <h4>{{ title }}</h4>
       <Author />
     </router-link>
   </div>
@@ -12,7 +12,7 @@
 import Author from "../components/Author.vue";
 
 export default {
-  props: ["msg"],
+  props: ["title", "image", "id"],
   name: "SmallCard",
   components: {
     Author,
