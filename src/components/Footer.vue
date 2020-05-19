@@ -21,6 +21,7 @@
   }
   li {
     margin:0 4vw 0 4vw;
+
     top: 50%;
     position: relative;
     list-style: none;

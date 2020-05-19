@@ -27,11 +27,29 @@
             <MainButton class="button" />
           </div>
           <div class="select select--one">
-            <span class="select--selected" v-on:click="selectedArticle = 1"
+            <span
+              class="select--selected"
+              v-on:click="
+                selectedArticle = 1;
+                clearTimerInterval();
+              "
               >01</span
             >
-            <span v-on:click="selectedArticle = 2">02</span>
-            <span v-on:click="selectedArticle = 3">03</span>
+            <span
+              v-on:click="
+                selectedArticle = 2;
+                clearTimerInterval();
+              "
+              >02</span
+            >
+            <span
+              v-on:click="
+                selectedArticle = 3;
+                clearTimerInterval();
+              "
+              >03</span
+            >
+            <div class="timebar--fill"></div>
             <div class="timebar"></div>
           </div>
         </div>
@@ -62,11 +80,29 @@
             <MainButton class="button" />
           </div>
           <div class="select select--one">
-            <span v-on:click="selectedArticle = 1">01</span>
-            <span class="select--selected" v-on:click="selectedArticle = 2"
+            <span
+              v-on:click="
+                selectedArticle = 1;
+                clearTimerInterval();
+              "
+              >01</span
+            >
+            <span
+              class="select--selected"
+              v-on:click="
+                selectedArticle = 2;
+                clearTimerInterval();
+              "
               >02</span
             >
-            <span v-on:click="selectedArticle = 3">03</span>
+            <span
+              v-on:click="
+                selectedArticle = 3;
+                clearTimerInterval();
+              "
+              >03</span
+            >
+            <div class="timebar--fill"></div>
             <div class="timebar"></div>
           </div>
         </div>
@@ -97,11 +133,29 @@
             <MainButton class="button" />
           </div>
           <div class="select select--one">
-            <span v-on:click="selectedArticle = 1">01</span>
-            <span v-on:click="selectedArticle = 2">02</span>
-            <span class="select--selected" v-on:click="selectedArticle = 3"
+            <span
+              v-on:click="
+                selectedArticle = 1;
+                clearTimerInterval();
+              "
+              >01</span
+            >
+            <span
+              v-on:click="
+                selectedArticle = 2;
+                clearTimerInterval();
+              "
+              >02</span
+            >
+            <span
+              class="select--selected"
+              v-on:click="
+                selectedArticle = 3;
+                clearTimerInterval();
+              "
               >03</span
             >
+            <div class="timebar--fill"></div>
             <div class="timebar"></div>
           </div>
         </div>
@@ -124,16 +178,47 @@ export default {
   data() {
     return {
       selectedArticle: 1,
+      totalNumberOfArticles: 3,
+      myTimer: null,
     };
+  },
+
+  mounted() {
+    this.setupTimerInterval();
+  },
+
+  methods: {
+    setupTimerInterval: function() {
+      this.myTimer = setInterval(() => {
+
+        if (this.selectedArticle == this.totalNumberOfArticles) {
+          this.selectedArticle = 1;
+          return;
+        } else {
+          this.selectedArticle++;
+        }
+      }, 5000);
+    },
+
+    clearTimerInterval: function() {
+      clearInterval(this.myTimer);
+      this.setupTimerInterval();
+    },
   },
 };
 </script>
 
 <style scoped>
+/* main {
+  display: flex;
+  justify-content: center;
+} */
+
 .article {
   display: flex;
   margin-top: 24px;
   align-items: center;
+  /* max-width: 1300px; */
 }
 
 .main__content--container {
@@ -193,6 +278,30 @@ export default {
   opacity: 0.2;
 }
 
+.timebar--fill {
+  width: 108px;
+  height: 2px;
+  position: absolute;
+  background: #f66362;
+  bottom: 0;
+  transform-origin: left;
+
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: timebarFilled;
+}
+
+@keyframes timebarFilled {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
 img {
   object-fit: cover;
 }
@@ -207,7 +316,7 @@ img {
 
 .main__illustrations--large {
   height: 466px;
-  width: 48vw;
+  width: 49vw;
 }
 
 .main__illustrations--poster {

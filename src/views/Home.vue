@@ -4,6 +4,7 @@
     <Carousel/>
     <FeaturedArticles/>
     <AllArticles/>
+    <Chat/>
     <Footer/>
   </div>
 </template>
@@ -14,6 +15,7 @@ import Carousel from '@/components/Home/Carousel.vue'
 import FeaturedArticles from '@/components/Home/FeaturedArticles.vue'
 import AllArticles from '@/components/Home/AllArticles.vue'
 import Footer from '@/components/Footer.vue'
+import Chat from '@/components/Chat/Chat.vue'
 
 export default {
   name: 'Home',
@@ -23,6 +25,7 @@ export default {
     FeaturedArticles,
     AllArticles,
     Footer,
+    Chat,
   }
 }
 </script>
