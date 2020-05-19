@@ -52,6 +52,8 @@ img {
 h4 {
   margin-bottom: 17px;
 
+  max-width: 555px;
+
   font-family: Lora;
   font-style: normal;
   font-weight: bold;
