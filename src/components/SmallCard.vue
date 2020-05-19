@@ -71,7 +71,7 @@ h4 {
   }
 
   img {
-    width: 90vw;
+    width: 87vw;
     height: 200px;
   }
 }
