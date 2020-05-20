@@ -60,6 +60,7 @@
         </div>
       </div>
     </article>
+    <FeaturedArticles :articles="articles"/>
     <Footer />
   </div>
 </template>
@@ -68,6 +69,7 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Author from "@/components/Author.vue";
+import FeaturedArticles from "@/components/Home/FeaturedArticles.vue";
 import axios from 'axios';
 
 export default {
@@ -76,24 +78,33 @@ export default {
     Header,
     Footer,
     Author,
+    FeaturedArticles,
   },
 
   data() {
     return {
       article: null,
+      articles: []
     };
   },
 
   async created() {
     this.article = await this.getArticle(this.$route.params.id);
+    this.articles = await this.getArticles();
   },
 
   methods: {
     async getArticle(id) {
       const  { data } = await axios.get(`https://my-json-server.typicode.com/louis-genestier/typicode2/articles/${id}`)
       return data;
+    },
+
+    async getArticles() {
+      const { data } = await axios.get('https://my-json-server.typicode.com/louis-genestier/typicode2/articles');
+      return data;
     }
   },
+
 };
 </script>
 
