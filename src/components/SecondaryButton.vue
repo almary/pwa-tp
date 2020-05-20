@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <router-link class="link" to="/">
+    <router-link class="link" :to="{ name: 'Listing'}">
       <button>View all articles</button>
     </router-link>
   </div>

@@ -134,9 +134,9 @@ export default {
     },
 
     next: function() {
-      if (this.sliderPosition >= 4 && this.screenSize == "large") {
+      if (this.sliderPosition >= 2 && this.screenSize == "large") {
         return;
-      } else if (this.sliderPosition >= 6 && this.screenSize == "mobile") {
+      } else if (this.sliderPosition >= 4 && this.screenSize == "mobile") {
         return;
       }
       this.sliderPosition++;
@@ -297,6 +297,10 @@ export default {
     width: 1000px;
   }
 
+  .smallCard {
+    width: 315px;
+  }
+
   .slider--container {
     width: 1000px;
   }
@@ -305,6 +309,10 @@ export default {
 @media screen and (max-width: 1150px) {
   .featuredArticles__content {
     width: 794px;
+  }
+
+  .smallCard {
+    width: 244px;
   }
 
   .slider--container {
@@ -324,6 +332,10 @@ export default {
 
   .slider--container {
     width: 90vw;
+  }
+
+  .smallCard {
+    width: 87vw;
   }
 
   .featuredArticles__arrow {

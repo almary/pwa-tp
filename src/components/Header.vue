@@ -18,8 +18,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 26px 32px 26px 32px;
-
-  /* box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.14); */
 }
 
 .header__links {
@@ -37,5 +35,9 @@
 .link {
   text-decoration: none;
   color: #161616;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 </style>

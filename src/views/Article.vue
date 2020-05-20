@@ -104,21 +104,27 @@ export default {
 }
 
 .hero {
+  position: relative;
   width: 100vw;
   height: 320px;
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.4) 100%
-    );
   background-size: cover;
-
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.4;
+}
+
 h1 {
+  z-index: 1;
+
   display: block;
   width: 1000px;
   text-align: center;

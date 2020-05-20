@@ -1,6 +1,6 @@
 <template>
   <div class="smallCard">
-    <router-link class="link" to="/">
+    <router-link class="link" :to="{ name: 'Article', params: { id: id }}">
       <img :src="image" alt="image" />
       <h4>{{ title }}</h4>
       <Author />
