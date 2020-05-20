@@ -3,9 +3,13 @@
     <Header />
     <div class="content">
       <h1>All Articles</h1>
-      <div class="card" v-for="post in posts" :key="post.id">
-        <router-link class="link" :to="`/article/${post.id}`">
-          <BigCard />
+      <div class="card" v-for="article in articles" :key="article.id">
+        <router-link class="link" :to="`/article/${article.id}`">
+          <BigCard 
+            :title="article.title"
+            :image="article.imageBackground"
+            :id="article.id"
+          />
         </router-link>
       </div>
     </div>
@@ -17,6 +21,7 @@
 import Header from "@/components/Header.vue";
 import BigCard from "@/components/BigCard.vue";
 import Footer from "@/components/Footer.vue";
+import axios from 'axios';
 
 export default {
   name: "Listing",
@@ -28,17 +33,19 @@ export default {
 
   data() {
     return {
-      posts: null,
+      articles: [],
     };
   },
 
-  created() {
-    fetch("https://jsonplaceholder.typicode.com/posts").then((response) => {
-      response.json().then((data) => {
-        this.posts = data;
-      });
-    });
+  async created() {
+    this.articles = await this.getArticles();
   },
+  methods: {
+    async getArticles() {
+      const { data } = await axios.get('https://my-json-server.typicode.com/louis-genestier/typicode2/articles');
+      return data;
+    }
+  }
 };
 </script>
 

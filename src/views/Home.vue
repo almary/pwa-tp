@@ -44,8 +44,8 @@ export default {
   },
   methods: {
     async getArticles() {
-      const result = await axios.get('https://my-json-server.typicode.com/louis-genestier/typicode2/articles');
-      return result.data;
+      const { data } = await axios.get('https://my-json-server.typicode.com/louis-genestier/typicode2/articles');
+      return data;
     }
   }
 }
