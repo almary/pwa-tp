@@ -96,7 +96,6 @@ export default {
   methods: {
     async getArticle(id) {
       const  { data } = await axios.get(`https://my-json-server.typicode.com/louis-genestier/typicode2/articles/${id}`)
-      console.log(data)
       return data;
     },
 
