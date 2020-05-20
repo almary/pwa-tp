@@ -50,6 +50,7 @@ export default {
       hideChat: false,
     };
   },
+
   sockets: {
     newMessage(data) {
       this.messages.push(data);

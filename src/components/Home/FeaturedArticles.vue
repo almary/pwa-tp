@@ -192,7 +192,7 @@ export default {
 <style scoped>
 .featuredArticles {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 
   margin-top: calc(120px + 24px);
 
