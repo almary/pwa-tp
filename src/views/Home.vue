@@ -2,6 +2,7 @@
   <div class="home">
     <Header/>
     <Carousel
+      v-if="articles"
       :articles="articles"
     />
     <FeaturedArticles
@@ -36,7 +37,7 @@ export default {
   },
   data() {
     return {
-      articles: []
+      articles: null
     }
   },
   created: async function() {
