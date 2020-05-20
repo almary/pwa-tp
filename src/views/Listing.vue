@@ -63,7 +63,7 @@ export default {
 }
 
 h1 {
-  margin-bottom: 38px;
+  margin-bottom: 48px;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;

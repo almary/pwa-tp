@@ -96,6 +96,7 @@ export default {
   methods: {
     async getArticle(id) {
       const  { data } = await axios.get(`https://my-json-server.typicode.com/louis-genestier/typicode2/articles/${id}`)
+      console.log(data)
       return data;
     },
 
@@ -104,6 +105,13 @@ export default {
       return data;
     }
   },
+
+  watch: {
+    '$route.params.id': async function() {
+      this.article = await this.getArticle(this.$route.params.id);
+      window.scrollTo(0,0);
+    }
+  }
 
 };
 </script>
