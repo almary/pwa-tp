@@ -7,48 +7,7 @@
     <article>
       <div class="article__container">
         <p class="article__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue quis
-          id blandit gravida sed neque venenatis. Est morbi id nisi, venenatis
-          est fermentum. Eget lobortis morbi suspendisse malesuada iaculis.
-          Nisi, orci enim justo vehicula urna. Ac ut faucibus netus vivamus
-          mauris et convallis lobortis auctor. Ut posuere eget vulputate a,
-          tellus sagittis porttitor. Odio curabitur pellentesque turpis
-          elementum ac integer sit dictum nisi. Risus enim arcu natoque massa
-          arcu blandit duis. Tempor lorem tempus at gravida interdum. Nibh
-          accumsan pretium feugiat varius faucibus orci. Risus faucibus quis vel
-          egestas senectus mauris lacinia odio. Ullamcorper viverra mauris
-          tortor, pellentesque velit eget metus. Faucibus turpis egestas
-          convallis tortor. Elit varius congue id adipiscing. Lacus, nibh
-          ullamcorper enim, a. Pulvinar suscipit facilisis quam nec diam. Quam
-          eros, et sollicitudin sed tristique nunc, sed ac. Senectus amet
-          scelerisque odio mauris. Orci dolor quam sed id purus, justo massa.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue quis
-          id blandit gravida sed neque venenatis. Est morbi id nisi, venenatis
-          est fermentum. Eget lobortis morbi suspendisse malesuada iaculis.
-          Nisi, orci enim justo vehicula urna. Ac ut faucibus netus vivamus
-          mauris et convallis lobortis auctor. Ut posuere eget vulputate a,
-          tellus sagittis porttitor. Odio curabitur pellentesque turpis
-          elementum ac integer sit dictum nisi. Risus enim arcu natoque massa
-          arcu blandit duis. Tempor lorem tempus at gravida interdum. Nibh
-          accumsan pretium feugiat varius faucibus orci. Risus faucibus quis vel
-          egestas senectus mauris lacinia odio. Ullamcorper viverra mauris
-          tortor, pellentesque velit eget metus. Faucibus turpis egestas
-          convallis tortor. Elit varius congue id adipiscing. Lacus, nibh
-          ullamcorper enim, a. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Congue quis id blandit gravida sed neque venenatis.
-          Est morbi id nisi, venenatis est fermentum. Eget lobortis morbi
-          suspendisse malesuada iaculis. Nisi, orci enim justo vehicula urna. Ac
-          ut faucibus netus vivamus mauris et convallis lobortis auctor. Ut
-          posuere eget vulputate a, tellus sagittis porttitor. Odio curabitur
-          pellentesque turpis elementum ac integer sit dictum nisi. Risus enim
-          arcu natoque massa arcu blandit duis. Tempor lorem tempus at gravida
-          interdum. Nibh accumsan pretium feugiat varius faucibus orci. Risus
-          faucibus quis vel egestas senectus mauris lacinia odio. Ullamcorper
-          viverra mauris tortor, pellentesque velit eget metus. Faucibus turpis
-          egestas convallis tortor. Elit varius congue id adipiscing. Lacus,
-          nibh ullamcorper enim, a. Pulvinar suscipit facilisis quam nec diam.
-          Quam eros, et sollicitudin sed tristique nunc, sed ac. Senectus amet
-          scelerisque odio mauris. Orci dolor quam sed id purus, justo massa.
+          {{ article.content }}
         </p>
         <div class="article__bottom">
           <Author />

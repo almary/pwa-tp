@@ -194,7 +194,7 @@ export default {
   position: relative;
   overflow-x: hidden;
 
-  margin-top: calc(120px + 32px);
+  margin-top: calc(120px + 24px);
 
   width: 100vw;
   display: flex;
