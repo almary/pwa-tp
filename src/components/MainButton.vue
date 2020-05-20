@@ -1,10 +1,16 @@
 <template>
   <div class="button">
-    <router-link class="link" to="/">
+    <router-link class="link" :to="{ name: 'Article', params: { id: id }}">
       <button>Read the article</button>
     </router-link>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["id"],
+}
+</script>
 
 <style scoped>
 .button {

@@ -1,8 +1,8 @@
 <template>
-  <div class="article" v-if="post">
+  <div class="article" v-if="article">
     <Header />
-    <div class="hero">
-      <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
+    <div class="hero" :style="{ backgroundImage: `url('${article.imageBackground}')` }">
+      <h1> {{ article.title }} </h1>
     </div>
     <article>
       <div class="article__container">
@@ -68,6 +68,7 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Author from "@/components/Author.vue";
+import axios from 'axios';
 
 export default {
   name: "Article",
@@ -79,21 +80,19 @@ export default {
 
   data() {
     return {
-      post: null,
+      article: null,
     };
   },
 
-  created() {
-    console.log("created");
+  async created() {
+    this.article = await this.getArticle(this.$route.params.id);
+  },
 
-    fetch(
-      `https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`
-    ).then((response) => {
-      response.json().then((data) => {
-        this.post = data;
-        console.log(this.post);
-      });
-    });
+  methods: {
+    async getArticle(id) {
+      const  { data } = await axios.get(`https://my-json-server.typicode.com/louis-genestier/typicode2/articles/${id}`)
+      return data;
+    }
   },
 };
 </script>
@@ -111,8 +110,8 @@ export default {
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(0, 0, 0, 0.4) 100%
-    ),
-    url("../assets/img/image.jpg");
+    );
+  background-size: cover;
 
   display: flex;
   justify-content: center;

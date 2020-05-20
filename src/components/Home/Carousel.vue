@@ -3,22 +3,22 @@
     <main>
       <div v-show="selectedArticle == 1" class="article">
         <div class="main__illustrations">
-          <img
-            v-show="selectedArticle == 1"
-            src="../../assets/img/image.jpg"
-            alt="illustration"
-            class="main__illustrations--large"
-          />
-          <img
-            v-show="selectedArticle == 1"
-            src="../../assets/img/image.jpg"
-            alt="poster"
-            class="main__illustrations--poster"
-          />
+            <img
+              v-show="selectedArticle == 1"
+              :src="articles[0].imageBackground"
+              alt="illustration"
+              class="main__illustrations--large"
+            />
+            <img
+              v-show="selectedArticle == 1"
+              :src="articles[0].image"
+              alt="poster"
+              class="main__illustrations--poster"
+            />
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>The Meaning of Studio Ghibli's 'Spirited Away'</h1>
+            <h1>{{ articles[0].title }}</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.
@@ -26,7 +26,10 @@
               tincidunt odio platea dolor sed sagittis vitae liber...
             </h3>
             <Author class="author" />
-            <MainButton class="button" />
+            <MainButton
+              class="button"
+              :id="articles[0].id"
+            />
           </div>
           <div class="select select--one">
             <span
@@ -58,22 +61,22 @@
       </div>
       <div v-show="selectedArticle == 2" class="article">
         <div class="main__illustrations">
-          <img
-            v-show="selectedArticle == 2"
-            src="../../assets/img/image.jpg"
-            alt="illustration"
-            class="main__illustrations--large"
-          />
-          <img
-            v-show="selectedArticle == 2"
-            src="../../assets/img/image.jpg"
-            alt="poster"
-            class="main__illustrations--poster"
-          />
+            <img
+              v-show="selectedArticle == 2"
+              :src="articles[1].imageBackground"
+              alt="illustration"
+              class="main__illustrations--large"
+            />
+            <img
+              v-show="selectedArticle == 2"
+              :src="articles[1].image"
+              alt="poster"
+              class="main__illustrations--poster"
+            />
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>The Meaning of Studio Ghibli's 'Mononoke Hime'</h1>
+            <h1>{{ articles[1].title }}</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.
@@ -81,7 +84,10 @@
               tincidunt odio platea dolor sed sagittis vitae liber...
             </h3>
             <Author class="author" />
-            <MainButton class="button" />
+            <MainButton
+              class="button"
+              :id="articles[1].id"
+            />
           </div>
           <div class="select select--one">
             <span
@@ -113,22 +119,22 @@
       </div>
       <div v-show="selectedArticle == 3" class="article">
         <div class="main__illustrations">
-          <img
-            v-show="selectedArticle == 3"
-            src="../../assets/img/image.jpg"
-            alt="illustration"
-            class="main__illustrations--large"
-          />
-          <img
-            v-show="selectedArticle == 3"
-            src="../../assets/img/image.jpg"
-            alt="poster"
-            class="main__illustrations--poster"
-          />
+            <img
+              v-show="selectedArticle == 3"
+              :src="articles[2].imageBackground"
+              alt="illustration"
+              class="main__illustrations--large"
+            />
+            <img
+              v-show="selectedArticle == 3"
+              :src="articles[2].image"
+              alt="poster"
+              class="main__illustrations--poster"
+            />
         </div>
         <div class="main__content--container">
           <div class="main__content">
-            <h1>The Meaning of Studio Ghibli's 'Howl's Moving Castle'</h1>
+            <h1>{{ articles[2].title }}</h1>
             <h3>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
               tincidunt odio platea dolor sed sagittis vitae libero, elit.
@@ -136,7 +142,10 @@
               tincidunt odio platea dolor sed sagittis vitae liber...
             </h3>
             <Author class="author" />
-            <MainButton class="button" />
+            <MainButton 
+              class="button"
+              :id="articles[2].id"
+            />
           </div>
           <div class="select select--one">
             <span
@@ -175,6 +184,7 @@ import Author from "@/components/Author.vue";
 import MainButton from "@/components/MainButton.vue";
 
 export default {
+  props: ["articles"],
   name: "Carousel",
   components: {
     Author,
