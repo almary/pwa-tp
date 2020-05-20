@@ -1,16 +1,34 @@
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 
+workbox.setConfig({
+  debug: true
+})
+
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(
-  new RegExp("https://jsonplaceholder.typicode.com/(.*)"),
+  new RegExp("https://my-json-server.typicode.com/louis-genestier/typicode2/(.*)"),
   new workbox.strategies.CacheFirst({
-    cacheName: "jsonplaceholder",
+    cacheName: "ghibliContent",
     method: "GET",
     cacheableResponse: { statuses: [0, 200] },
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 30,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  new RegExp("https://image.prntscr.com/image/(.*)"),
+  new workbox.strategies.CacheFirst({
+    cacheName: "ghibliImages",
+    method: "GET",
+    cacheableResponse: { statuses: [0, 200] },
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 10,
       }),
     ],
   })
