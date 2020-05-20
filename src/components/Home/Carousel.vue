@@ -255,6 +255,13 @@ export default {
   color: #000000;
 
   opacity: 0.2;
+
+  transition: all 0.2s ease;
+}
+
+.select span:hover {
+  color: #f66362;
+  opacity: 0.8;
 }
 
 .select .select--selected {

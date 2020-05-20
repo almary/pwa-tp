@@ -36,10 +36,17 @@ button {
   color: #f66362;
 
   cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
 button:focus {
   outline: #f66362 1px solid;
+}
+
+button:hover {
+  background: #f66362;
+  color: #f5f5f0;
 }
 
 @media screen and (max-width: 850px) {

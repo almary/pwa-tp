@@ -34,10 +34,18 @@ button {
   color: #f5f5f0;
 
   cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
 button:focus {
   outline: none;
+}
+
+button:hover {
+  outline: #f66362 1px solid;
+  background: none;
+  color: #f66362;
 }
 
 .link {

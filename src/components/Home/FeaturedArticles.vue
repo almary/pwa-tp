@@ -12,8 +12,9 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="22" cy="22" r="22" fill="#F5F5F0" />
+          <circle class="circle--fill" cx="22" cy="22" r="22" fill="#F5F5F0" />
           <circle
+            class="circle--stroke"
             cx="22"
             cy="22"
             r="21"
@@ -50,8 +51,9 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="22" cy="22" r="22" fill="#F5F5F0" />
+          <circle class="circle--fill" cx="22" cy="22" r="22" fill="#F5F5F0" />
           <circle
+          class="circle--stroke"
             cx="22"
             cy="22"
             r="21"
@@ -131,10 +133,10 @@ export default {
     },
 
     next: function() {
-      if (this.sliderPosition >= 4 && this.screenSize == 'large') {
+      if (this.sliderPosition >= 4 && this.screenSize == "large") {
         return;
-      } else if (this.sliderPosition >= 6 && this.screenSize == 'mobile') {
-        return
+      } else if (this.sliderPosition >= 6 && this.screenSize == "mobile") {
+        return;
       }
       this.sliderPosition++;
       //update smallCardSize each time in case
@@ -181,7 +183,7 @@ export default {
       } else {
         this.screenSize = "mobile";
       }
-    }
+    },
   },
 };
 </script>
@@ -278,6 +280,15 @@ export default {
   transition: transform 0.3s ease-in-out;
 
   width: 1920px;
+}
+
+.circle--stroke {
+  transition: all 0.2s ease;
+}
+
+.featuredArticles__arrow--left:hover .circle--stroke,
+.featuredArticles__arrow--right:hover .circle--stroke {
+  stroke-opacity: 1;
 }
 
 @media screen and (max-width: 1350px) {

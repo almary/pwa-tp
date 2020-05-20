@@ -27,11 +27,17 @@ export default {
   cursor: pointer;
 }
 
+.smallCard:hover img {
+  opacity: 0.8;
+}
+
 img {
   width: 390px;
   height: 216px;
 
   object-fit: cover;
+
+  transition: all 0.2s ease;
 }
 
 h4 {

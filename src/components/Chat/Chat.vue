@@ -128,6 +128,12 @@ h3 {
   /* Neutrals/Black */
 
   color: #161616;
+
+  transition: all 0.2s ease;
+}
+
+h3:hover {
+    background: #e7e7e3;
 }
 
 .messages {
